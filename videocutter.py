@@ -5,6 +5,9 @@ import os
 def is_folder(line:str):
     return line.split(":")[0] == "folder"
 
+def is_type(line:str):
+    return line.split(":")[0] == "type"
+
 def is_file(line:str):
     return line.split(":")[0] == "file"
 
@@ -30,7 +33,7 @@ def mkdir_if_not_exist(dir:str):
 if __name__ == "__main__":
     os.chdir("/Users/enan/Projects/2020-02/grad-project/data")
     trim_list = open("trim_list.txt", 'r')
-    folder, file = "", ""
+    folder, file, type = "", "", ""
     index = 1
     output_prefix = "cheating"
     mkdir_if_not_exist(output_prefix)
@@ -40,13 +43,16 @@ if __name__ == "__main__":
             break
         if is_folder(line):
             folder = get_name(line)
+        elif is_type(line):
+            type = get_name(line)
         elif is_file(line):
             file = get_name(line)
             index = 1
         else:  # 부정행위
             start_time, end_time, category = get_times_and_category(line)
-            output_name = f"{output_prefix}/{category}/{index}_{file}"
+            output_name = f"{output_prefix}/{category}/{type}/{index}_{file}"
             mkdir_if_not_exist(f"{output_prefix}/{category}")
+            mkdir_if_not_exist(f"{output_prefix}/{category}/{type}")
             ffmpeg_extract_subclip(f"{folder}/{file}", start_time, end_time, targetname=output_name)
             print(f"{output_name}_saved")
             index += 1
