@@ -25,5 +25,5 @@ pip install -r requirments.txt
 ### 3. run videocutter.py
    ```python videocutter.py```
 ### 4. check result
-   ```[1에서 입력한 path]/cheating/[category]/[webcam or phone]/[index]_[file명] 파일로 저장됨```
+  > [1에서 입력한 path]/cheating/[category]/[webcam or phone]/[index]_[file명] 파일로 저장됨
  
