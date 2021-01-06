@@ -16,12 +16,13 @@ pip install -r requirments.txt
     > folder:[folder명]  
     > type:[webcam or phone]  
     > file:[file명]  
-    > mm:ss:ms-mm:ss:ms [category]  # mm:ss:ms = 분:초:밀리초
+    > mm:ss:ms-mm:ss:ms [category]  # mm:ss:ms = 분:초:밀리초  
     > mm:ss:ms-mm:ss:ms [category]  
     > file:[file명]  
     > mm:ss:ms-mm:ss:ms [category]  
     > mm:ss:ms-mm:ss:ms [category]  
     > . . .   
 #### 3. run videocutter.py
+  * python videocutter.py
 #### 4. check result
   * [1에서 입력한 path]/cheating/[category]/[webcam or phone]/[index]_[file명] 파일로 저장됨
