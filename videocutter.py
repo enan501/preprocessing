@@ -1,6 +1,7 @@
 from moviepy.video.io.ffmpeg_tools import ffmpeg_extract_subclip
 import os
 
+path = "/Users/enan/Projects/2020-02/grad-project/data"
 
 def is_folder(line:str):
     return line.split(":")[0] == "folder"
@@ -31,7 +32,7 @@ def mkdir_if_not_exist(dir:str):
         os.mkdir(dir)
 
 if __name__ == "__main__":
-    os.chdir("/Users/enan/Projects/2020-02/grad-project/data")
+    os.chdir(path)
     trim_list = open("trim_list.txt", 'r')
     folder, file, type = "", "", ""
     index = 1
